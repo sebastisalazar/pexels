@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export const useFetch = (cat) => {
+export const useFetch = (cat,page=1) => {
 
   const [fotos, setFotos] = useState([]);
       
@@ -10,7 +10,7 @@ export const useFetch = (cat) => {
 
     setCargando(true)
 
-    let query=`${import.meta.env.VITE_URLBASE}/search?query=${cat}&page=1&per_page=4&size=small&locale=es-ES`
+    let query=`${import.meta.env.VITE_URLBASE}/search?query=${cat}&page=${page}&per_page=4&size=small&locale=es-ES`
     
     //console.log(query)
     try {
@@ -36,8 +36,11 @@ export const useFetch = (cat) => {
 
   useEffect(() => {
         connection()
-  }, [cat])
+  }, [cat,page])
 
+//   useEffect(() => {
+//         connection()
+//   }, [page])
 
   return {
         fotos,

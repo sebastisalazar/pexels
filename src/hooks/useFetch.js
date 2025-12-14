@@ -24,11 +24,11 @@ export const useFetch = (cat,page=1) => {
             //console.log(data)
             setFotos(data); //cambia el estado de fotos al que devuelve el fetch
         }else{
-             throw `Ha habido un error al cargar el endpoint ${cat}`
+          console.error(`Error con la respuesta desde API:`,resp.status)
         }
 
     } catch (error) {
-        throw error
+        console.error(`Ha habido un problema al conectar con la API`)
     }
 
     setCargando(false)

@@ -42,9 +42,10 @@ export const Paginacion = ({ page, total, onPageChange}) => {
   // Handle solo para el boton de ir a la anterior pagina
   const handlePreviousPage = () => {
     if (page > 1) { //si la pagina es mayor a 1
-      onPageChange(page-1);
+      onPageChange(page-1);//setea en el padre GridGallery
     }
   };
+
   // Handle solo para el boton de ir a la siguiente pagina
   const handleNextPage = () => {
     if (page < totalPages) {//si la pagina es menor que la ultima
@@ -52,17 +53,19 @@ export const Paginacion = ({ page, total, onPageChange}) => {
     }
   };
 
+  // Handle solo para el boton de ir a la ultima pagina
   const handleLastPage = () => {
       onPageChange(totalPages); //setea el estado en el padre
   };
 
+  // Handle solo para el boton de ir a la primera pagina
   const handleFirstPage = () => {
       onPageChange(1); ////setea el estado en el padre
   };
 
 
   return (
-    <div>
+    <div >
       {
         <div className="pagination">
 

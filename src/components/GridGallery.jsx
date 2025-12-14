@@ -22,9 +22,9 @@ export const GridGallery = ({cat}) => {
 
   return (
         <>
-            <section >
-              <h1>{cat}</h1>
-              <div className='flexContainer'>
+            <section>
+              <h1 className='mb20'>{cat}</h1>
+              <div className='grid mb20'>
                 {
                   
                   cargando 

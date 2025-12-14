@@ -1,13 +1,13 @@
 import './Card.css'
 export const Card = ({foto}) => {
 
-  console.log(foto)
- const {photographer}=foto
+  //console.log(foto)
+ const {src,alt}=foto
+
   return (
     <article className='card'>
-        {/* <img src={url} alt={desc} /> */}
-        {/* <p>{desc}</p> */}
-        <h3>{photographer}</h3>
+        <img src={src.small} alt={alt} />
+         <p>{alt}</p>
 
     </article>
   )

@@ -13,9 +13,9 @@ export const GridGallery = ({cat}) => {
   const {fotos,cargando}= useFetch(cat,page)
 
  // console.log(useFetch(cat,page))
-    // This function is passed down to Paginacion to handle page changes
+    // funcion para pasar a componente hijo CARD
   const handlePageChange = (newPage) => {
-    setPage(newPage); // Update the page state when a page is changed
+    setPage(newPage); // Actualiza el estado de la pagina
   };
 
   //console.log(page)

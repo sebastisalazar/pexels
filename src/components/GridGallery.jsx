@@ -9,12 +9,12 @@ export const GridGallery = ({cat}) => {
   //const {fotos,cargando}= useLlamadaApi(cat)
   const {fotos,cargando}= useFetch(cat)
 
-  //console.log("respuesta de fetch recibida en gridgallery: ",fotos)
+  console.log("respuesta de fetch recibida en gridgallery: ",fotos)
   return (
         <>
-            <section >
-              <h1>{cat}</h1>
-              <div className='flexContainer'>
+            <section>
+              <h1 className='mb20'>{cat}</h1>
+              <div className='grid mb20'>
                 {
                   
                   cargando 
@@ -27,7 +27,12 @@ export const GridGallery = ({cat}) => {
                 
               </div>
               <div>
-                {/* <Paginacion key={fotos.page} total={fotos.total_results} page={fotos.page} next_page={fotos.next_page}/> */}
+                {
+                  <Paginacion key={fotos.page} 
+                  total={fotos.total_results} 
+                  page={fotos.page} 
+                  next_page={fotos.next_page}/> 
+                  }
               </div>
             </section>
         </> 

@@ -1,14 +1,17 @@
-
-export const Paginacion = ({total,page,next_page}) => {
+import "./Paginacion.css"
+export const Paginacion = ({ total, page, setPage }) => {
   return (
-    <div>
-      <p>{total}</p>
-      <p>{page}</p>
-      <p>{next_page}</p>
-      <ul>
-        <li><a href="">{page}</a></li>
-        <li><a href={next_page}>{page+1}</a></li>
-      </ul>
+    <div className="pagination">
+      <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+        Anterior
+      </button>
+
+      <span>Página {page}</span>
+
+      <button onClick={() => setPage(page + 1)}>
+        Siguiente
+      </button>
     </div>
   )
 }
+

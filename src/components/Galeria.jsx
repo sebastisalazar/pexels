@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { GridGallery } from './GridGallery'
 import { Formulario } from './Formulario'
+import { Header } from './Header'
 export const Galeria = () => {
 
   //const categorias=["naturaleza","tecnologia"] //almacena busquedas hechas
@@ -17,22 +18,26 @@ export const Galeria = () => {
   }
 
   return (  
-    <>
-      <Formulario addCategoria={addCategoria}/>
-      
-    { 
-      categorias.map((cat)=>(
-       
-        //console.log(cat)
 
-              //GRID GALLERY
-        <GridGallery key={cat} cat={cat}/>
-                  //cards
-                  //paginacion
-          
-      ))
-    }
-         
+    <>
+    <Header/>
+      <section className='container'>
+        
+        <Formulario addCategoria={addCategoria}/>
+        
+      { 
+        categorias.map((cat)=>(
+        
+          //console.log(cat)
+
+                //GRID GALLERY
+          <GridGallery key={cat} cat={cat}/>
+                    //cards
+                    //paginacion
+            
+        ))
+      }
+      </section>  
     </>
   )
 }

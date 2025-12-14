@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import "./Formulario.css"
 export const Formulario = ({addCategoria}) => {
 
     //inicio de formulario con array vacio como valor por defecto
@@ -17,7 +17,7 @@ export const Formulario = ({addCategoria}) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='search-form'>
         <input type="text" name="busqueda" placeholder="Busqueda"/>
         <input type="submit" />
     </form>

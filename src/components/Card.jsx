@@ -7,7 +7,7 @@ export const Card = ({foto}) => {
   return (
     <article className='card'>
         <img src={src.small} alt={alt} />
-         <p>{alt}</p>
+         <p className='card-content'>{alt}</p>
 
     </article>
   )
